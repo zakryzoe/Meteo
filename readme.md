@@ -27,38 +27,7 @@
 
 ---
 
-## 2. Cloud Infrastructure & Pricing
-
-### Recommended Baseline Hardware
-
-| Resource | Specification |
-|---|---|
-| **vCPU** | 8 (ARM64 architecture) |
-| **Memory** | 32 GB RAM |
-| **Storage** | 1 TB object storage (S3/ GCS / Azure Blob) |
-| **Network egress** | 500 GB / month |
-| **Total estimated cost** | **$285 – $316 / month** |
-
-### Equivalent Cloud Instances
-
-| Provider | Instance Type | vCPU | RAM | Monthly Compute |
-|---|---|---|---|---|
-| **AWS** | `m8g.2xlarge` (Graviton4) | 8 | 32 GB | ~$220–250 |
-| **Azure** | `D8ps v5` (Ampere Altra) | 8 | 32 GB | ~$215–245 |
-| **GCP** | `t2a-standard-8` | 8 | 32 GB | ~$205–235 |
-
-### Pricing Breakdown
-
-| Component | Details | Estimated Cost / Month |
-|---|---|---|
-| **Compute VM** | 8 vCPU / 32 GB ARM, on-demand (3yr savings ~40%) | $205 – $250 |
-| **Object Storage** | 1 TB (S3 Standard or equivalent) | ~$23 – $25 |
-| **Network Egress** | 500 GB | $0 – $41 (varies by provider) |
-| **Total** | | **$285 – $316** |
-
----
-
-## 3. Local Docker Simulation
+## 2. Local Docker Simulation
 
 ### Architecture
 
@@ -113,7 +82,7 @@ docker compose exec duckdb-server python -m scripts.seed_data --scale-factor 0.1
 
 ---
 
-## 5. DBeaver / BI Tool Connection
+## 3. DBeaver / BI Tool Connection
 
 Connect any JDBC-compatible tool (DBeaver, DataGrip, Tableau via JDBC) to the DuckDB Quack server using the [quack-jdbc driver](https://github.com/gizmodata/quack-jdbc) by GizmoData.
 
