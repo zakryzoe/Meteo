@@ -54,6 +54,7 @@ def _configure_duckdb(conn: duckdb.DuckDBPyConnection, config: dict[str, str]) -
     """
     conn.execute(f"SET memory_limit = '{config['memory_limit']}';")
     conn.execute(f"SET threads = {config['threads']};")
+    conn.execute("CALL enable_logging('QueryLog', storage = 'stdout');")
     conn.execute("SET enable_progress_bar = false;")
 
     conn.execute("INSTALL httpfs;")
